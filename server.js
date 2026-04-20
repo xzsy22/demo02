@@ -14,4 +14,7 @@ app.get('/scan', (req, res) => {
   res.json({ code: 200, result: item });
 });
 
-app.listen(3000, '0.0.0.0', () => console.log('服务已启动，端口3000'));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
+});
